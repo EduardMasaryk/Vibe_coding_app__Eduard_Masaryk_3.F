@@ -2,17 +2,23 @@
 const conversionData = {
     temperature: {
         name: '🌡️ Teplota',
-        units: ['°C', '°F', 'K'],
+        units: ['°C', '°F', 'K', '°R', '°Re', '°De'],
         // Base unit: Celsius
         toBase: {
             '°C': (val) => val,
             '°F': (val) => (val - 32) * 5/9,
-            'K': (val) => val - 273.15
+            'K': (val) => val - 273.15,
+            '°R': (val) => (val - 491.67) * 5/9,
+            '°Re': (val) => val * 5/4,
+            '°De': (val) => 100 - val * 6/5
         },
         fromBase: {
             '°C': (val) => val,
             '°F': (val) => val * 9/5 + 32,
-            'K': (val) => val + 273.15
+            'K': (val) => val + 273.15,
+            '°R': (val) => (val + 273.15) * 9/5,
+            '°Re': (val) => val * 4/5,
+            '°De': (val) => (100 - val) * 5/6
         }
     },
     distance: {
@@ -61,19 +67,23 @@ const conversionData = {
     },
     speed: {
         name: '🚗 Rýchlosť',
-        units: ['m/s', 'km/h', 'mph', 'uzly'],
+        units: ['m/s', 'km/h', 'mph', 'uzly', 'ft/s', 'cm/s'],
         // Base unit: m/s
         toBase: {
             'm/s': (val) => val,
             'km/h': (val) => val / 3.6,
             'mph': (val) => val * 0.44704,
-            'uzly': (val) => val * 0.51444
+            'uzly': (val) => val * 0.51444,
+            'ft/s': (val) => val * 0.3048,
+            'cm/s': (val) => val / 100
         },
         fromBase: {
             'm/s': (val) => val,
             'km/h': (val) => val * 3.6,
             'mph': (val) => val / 0.44704,
-            'uzly': (val) => val / 0.51444
+            'uzly': (val) => val / 0.51444,
+            'ft/s': (val) => val / 0.3048,
+            'cm/s': (val) => val * 100
         }
     }
 };
