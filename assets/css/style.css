@@ -344,44 +344,318 @@ label {
     background: var(--secondary-color);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* Responsive Design */
+
+/* Tablet - 768px and below */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
     .container {
-        border-radius: 0;
+        border-radius: 12px;
     }
     
     header {
-        padding: 30px 15px;
+        padding: 30px 20px;
     }
     
     header h1 {
-        font-size: 1.8em;
+        font-size: 2em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .converter-section {
+        padding: 30px 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .swap-button {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+    }
+    
+    .result-value {
+        font-size: 2em;
+    }
+    
+    .results-table th,
+    .results-table td {
+        padding: 12px 14px;
+        font-size: 0.9em;
+    }
+    
+    .results-table td:first-child {
+        min-width: 100px;
+    }
+}
+
+/* Mobile - 600px and below */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        border-radius: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    header {
+        padding: 25px 15px;
+    }
+    
+    header h1 {
+        font-size: 1.6em;
+        margin-bottom: 8px;
+    }
+    
+    .subtitle {
+        font-size: 0.9em;
+    }
+    
+    .tabs-container {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .tab-button {
+        min-width: 100%;
+        padding: 14px 15px;
+        border-bottom: none;
+        border-left: 3px solid transparent;
+        text-align: left;
+        font-size: 0.95em;
+    }
+    
+    .tab-button.active {
+        border-bottom: none;
+        border-left-color: var(--primary-color);
+        background: rgba(99, 102, 241, 0.05);
     }
     
     .converter-section {
         padding: 20px 15px;
     }
     
-    .tab-button {
-        min-width: 100%;
-        text-align: center;
+    .input-group {
+        margin-bottom: 30px;
     }
     
-    .tabs-container {
-        flex-direction: column;
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .input-wrapper,
+    .select-wrapper {
+        width: 100%;
+    }
+    
+    .value-input,
+    .unit-select {
+        padding: 12px 12px;
+        font-size: 16px;
+    }
+    
+    .swap-button {
+        width: 100%;
+        height: 50px;
+        min-width: auto;
+        padding: 12px;
+        font-size: 1.2em;
+    }
+    
+    .result-display {
+        margin-bottom: 25px;
+    }
+    
+    .result-box {
+        padding: 20px;
+    }
+    
+    .result-label {
+        font-size: 0.9em;
     }
     
     .result-value {
         font-size: 1.8em;
     }
     
+    .table-section {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+    
     .table-section h2 {
         font-size: 1.2em;
+        margin-bottom: 15px;
     }
     
     .results-table th,
     .results-table td {
-        padding: 12px 10px;
+        padding: 10px 12px;
         font-size: 0.85em;
+    }
+    
+    .results-table td:first-child {
+        min-width: 80px;
+    }
+    
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .info-section {
+        padding: 15px 15px;
+    }
+    
+    .info-section p {
+        font-size: 0.9em;
+    }
+    
+    label {
+        font-size: 0.85em;
+        margin-bottom: 6px;
+    }
+}
+
+/* Small Mobile - 375px and below */
+@media (max-width: 375px) {
+    header h1 {
+        font-size: 1.4em;
+    }
+    
+    .subtitle {
+        font-size: 0.85em;
+    }
+    
+    .tab-button {
+        padding: 12px 12px;
+        font-size: 0.85em;
+    }
+    
+    .converter-section {
+        padding: 15px 12px;
+    }
+    
+    .input-wrapper,
+    .select-wrapper {
+        width: 100%;
+    }
+    
+    .value-input,
+    .unit-select {
+        padding: 12px 10px;
+        font-size: 16px;
+    }
+    
+    label {
+        font-size: 0.8em;
+    }
+    
+    .result-box {
+        padding: 15px;
+    }
+    
+    .result-label {
+        font-size: 0.85em;
+    }
+    
+    .result-value {
+        font-size: 1.6em;
+        word-break: break-word;
+    }
+    
+    .table-section h2 {
+        font-size: 1.1em;
+    }
+    
+    .results-table th,
+    .results-table td {
+        padding: 8px 10px;
+        font-size: 0.75em;
+    }
+    
+    .results-table td:first-child {
+        min-width: 70px;
+    }
+    
+    .info-section p {
+        font-size: 0.85em;
+    }
+}
+
+/* Large Desktop - 1920px and above */
+@media (min-width: 1921px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    header {
+        padding: 50px 30px;
+    }
+    
+    header h1 {
+        font-size: 3em;
+    }
+    
+    .subtitle {
+        font-size: 1.3em;
+    }
+    
+    .converter-section {
+        padding: 50px 40px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1.2fr 180px 80px 180px;
+        gap: 20px;
+    }
+    
+    .value-input,
+    .unit-select {
+        padding: 14px 16px;
+        font-size: 1.1em;
+    }
+    
+    .swap-button {
+        min-width: 60px;
+        height: 55px;
+        font-size: 1.5em;
+    }
+    
+    .result-value {
+        font-size: 3em;
+    }
+    
+    .result-box {
+        padding: 35px;
+    }
+    
+    .table-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+    
+    .results-table th,
+    .results-table td {
+        padding: 18px 20px;
+        font-size: 1.05em;
+    }
+    
+    .tab-button {
+        padding: 18px 25px;
+        font-size: 1.1em;
     }
 }
